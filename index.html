@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Management System</title>
+    <link rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- REGISTRATION PAGE -->
+    <div id="registerPage" class="page bg-2">
+        <div class="header">
+            <div class="logo">CUIIMS</div>
+            <div class="university">CHANDIGARH UNIVERSITY</div>
+            <div class="system">INFORMATION MANAGEMENT SYSTEM</div>
+        </div>
+        
+        <div class="welcome-text">
+            <div class="campus">CHANDIGARH UNIVERSITY</div>
+            <div class="description">Welcome to University Information Management System - Unnao Campus</div>
+        </div>
+        
+        <div class="form-box">
+            <h2 class="form-title">Create New Account</h2>
+            <p class="form-subtitle">College Management System</p>
+            
+            <form id="registerForm">
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-user icon"></i>Full Name:
+                    </label>
+                    <input type="text" class="form-input" id="fullName" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-user-tag icon"></i>Username:
+                    </label>
+                    <input type="text" class="form-input" id="regUsername" required placeholder="Choose a username">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-lock icon"></i>Password:
+                    </label>
+                    <input type="password" class="form-input" id="regPassword" required placeholder="Create a password">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-lock icon"></i>Confirm Password:
+                    </label>
+                    <input type="password" class="form-input" id="confirmPassword" required placeholder="Confirm your password">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-user-plus icon"></i>Register
+                </button>
+            </form>
+            
+            <div class="link">
+                Already have an account? <a href="#" onclick="showPage('loginPage')">Login here</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            © 2024 Chandigarh University - Information Management System
+        </div>
+    </div>
+
+    <!-- LOGIN PAGE -->
+    <div id="loginPage" class="page bg-2">
+        <div class="header">
+            <div class="logo">CUIIMS</div>
+            <div class="university">CHANDIGARH UNIVERSITY</div>
+            <div class="system">INFORMATION MANAGEMENT SYSTEM</div>
+        </div>
+        
+        <div class="welcome-text">
+            <div class="campus">CHANDIGARH UNIVERSITY</div>
+            <div class="description">Welcome to University Information Management System - Unnao Campus</div>
+        </div>
+        
+        <div class="form-box">
+            <h2 class="form-title">LOGIN</h2>
+            <p class="form-subtitle">Enter your credentials</p>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-user icon"></i>User ID:
+                    </label>
+                    <input type="text" class="form-input" id="loginUsername" required placeholder="Enter your User ID">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-lock icon"></i>Enter Password:
+                    </label>
+                    <input type="password" class="form-input" id="loginPassword" required placeholder="Enter your password">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-shield-alt icon"></i>Enter Captcha:
+                    </label>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <input type="text" class="form-input" id="captcha" required placeholder="Enter the captcha">
+                        <span id="captchaDisplay" style="font-weight: bold; font-size: 1.2rem; padding: 8px 15px; background: #f0f0f0; border-radius: 5px; letter-spacing: 2px; user-select: none;">UiuW</span>
+                        <button type="button" onclick="generateNewCaptcha()" style="background: none; border: none; cursor: pointer;" title="Refresh Captcha">
+                            <i class="fas fa-redo-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-sign-in-alt icon"></i>LOGIN
+                </button>
+                
+                <div class="link" style="margin-top: 15px;">
+                    <a href="#" onclick="showPage('registerPage')">CLICK HERE FOR REGISTRATION</a>
+                </div>
+                
+                <div class="link">
+                    <a href="#" onclick="alert('Please contact admin to reset your password.')">Forgot Password?</a>
+                </div>
+            </form>
+        </div>
+        
+        <div class="footer">
+            © 2024 Chandigarh University - Information Management System
+        </div>
+    </div>
+
+    <!-- DASHBOARD PAGE -->
+    <div id="dashboardPage" class="page bg-1">
+        <div class="header">
+            <div class="logo">CUIIMS</div>
+            <div class="university">CHANDIGARH UNIVERSITY</div>
+            <div class="system">College Management System - Dashboard</div>
+        </div>
+        
+        <div class="dashboard-grid">
+            <a href="#" class="menu-card" onclick="showPage('addStudentPage')">
+                <div class="menu-icon">➕</div>
+                <h3>Add Student</h3>
+                <p>Add new student to the system</p>
+            </a>
+            
+            <a href="#" class="menu-card" onclick="showPage('deleteStudentPage')">
+                <div class="menu-icon">🗑️</div>
+                <h3>Delete Student</h3>
+                <p>Remove student by roll number</p>
+            </a>
+            
+            <a href="#" class="menu-card" onclick="showPage('searchPage'); setSearchType('name')">
+                <div class="menu-icon">🔍</div>
+                <h3>Find by Name</h3>
+                <p>Search student by name</p>
+            </a>
+            
+            <a href="#" class="menu-card" onclick="showPage('searchPage'); setSearchType('roll')">
+                <div class="menu-icon">📋</div>
+                <h3>Find by Roll Number</h3>
+                <p>Search student by roll number</p>
+            </a>
+            
+            <a href="#" class="menu-card" onclick="showPage('allStudentsPage')">
+                <div class="menu-icon">📊</div>
+                <h3>Display All Students</h3>
+                <p>View all student records</p>
+            </a>
+            
+            <a href="#" class="menu-card" onclick="showPage('loginPage')">
+                <div class="menu-icon">🚪</div>
+                <h3>Logout</h3>
+                <p>Exit from dashboard</p>
+            </a>
+        </div>
+        
+        <div class="footer">
+            © 2024 Chandigarh University - College Management System
+        </div>
+    </div>
+
+    <!-- ADD STUDENT PAGE -->
+    <div id="addStudentPage" class="page bg-1">
+        <div class="header">
+            <div class="logo">CUIIMS</div>
+            <div class="university">CHANDIGARH UNIVERSITY</div>
+            <div class="system">Add New Student</div>
+        </div>
+        
+        <div class="form-box">
+            <h2 class="form-title">Add Student Details</h2>
+            
+            <form id="addStudentForm">
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-user-graduate icon"></i>Student Name:
+                    </label>
+                    <input type="text" class="form-input" id="studentName" required placeholder="Enter student name">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-id-card icon"></i>Roll Number:
+                    </label>
+                    <input type="text" class="form-input" id="studentRoll" required placeholder="Enter roll number (e.g., 25LBCS1234)">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-chart-line icon"></i>CGPA:
+                    </label>
+                    <input type="number" step="0.01" min="0" max="10" class="form-input" id="studentCGPA" required placeholder="Enter CGPA (0-10)">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-book icon"></i>Course:
+                    </label>
+                    <input type="text" class="form-input" id="studentCourse" required placeholder="Enter course">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-university icon"></i>Stream:
+                    </label>
+                    <select class="form-input" id="studentStream" required>
+                        <option value="">Select Stream</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Mechanical">Mechanical Engineering</option>
+                        <option value="Electrical">Electrical Engineering</option>
+                        <option value="Civil">Civil Engineering</option>
+                        <option value="Electronics">Electronics Engineering</option>
+                        <option value="Information Technology">Information Technology</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-plus icon"></i>Add Student
+                </button>
+                
+                <a href="#" class="btn btn-secondary" onclick="showPage('dashboardPage')" style="margin-top: 10px; display: block;">
+                    <i class="fas fa-arrow-left icon"></i>Back to Dashboard
+                </a>
+            </form>
+        </div>
+    </div>
+
+    <!-- DELETE STUDENT PAGE -->
+    <div id="deleteStudentPage" class="page bg-1">
+        <div class="header">
+            <div class="logo">CUIIMS</div>
+            <div class="university">CHANDIGARH UNIVERSITY</div>
+            <div class="system">Delete Student</div>
+        </div>
+        
+        <div class="form-box">
+            <h2 class="form-title">Delete Student Record</h2>
+            
+            <form id="deleteStudentForm">
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-id-card icon"></i>Enter Roll Number to Delete:
+                    </label>
+                    <input type="text" class="form-input" id="deleteRoll" required placeholder="Enter roll number">
+                </div>
+                
+                <button type="submit" class="btn btn-danger">
+                    <i class="fas fa-trash icon"></i>Delete Student
+                </button>
+                
+                <a href="#" class="btn btn-secondary" onclick="showPage('dashboardPage')" style="margin-top: 10px; display: block;">
+                    <i class="fas fa-arrow-left icon"></i>Back to Dashboard
+                </a>
+            </form>
+        </div>
+    </div>
+
+    <!-- SEARCH STUDENT PAGE -->
+    <div id="searchPage" class="page bg-1">
+        <div class="header">
+            <div class="logo">CUIIMS</div>
+            <div class="university">CHANDIGARH UNIVERSITY</div>
+            <div class="system" id="searchTitle">Search Student</div>
+        </div>
+        
+        <div class="form-box">
+            <h2 class="form-title" id="searchHeading">Search Student</h2>
+            
+            <form id="searchForm">
+                <div class="form-group">
+                    <label class="form-label" id="searchLabel">
+                        <i class="fas fa-search icon"></i>Enter Search Value:
+                    </label>
+                    <input type="text" class="form-input" id="searchValue" required placeholder="Enter search value">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-search icon"></i>Search
+                </button>
+                
+                <a href="#" class="btn btn-secondary" onclick="showPage('dashboardPage')" style="margin-top: 10px; display: block;">
+                    <i class="fas fa-arrow-left icon"></i>Back to Dashboard
+                </a>
+            </form>
+        </div>
+    </div>
+
+    <!-- ALL STUDENTS PAGE -->
+    <div id="allStudentsPage" class="page bg-1">
+        <div class="header">
+            <div class="logo">CUIIMS</div>
+            <div class="university">CHANDIGARH UNIVERSITY</div>
+            <div class="system">All Students Records</div>
+        </div>
+        
+        <div class="results-box">
+            <h2 style="color: #2c3e50; margin-bottom: 20px; text-align: center;">All Registered Students</h2>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No</th>
+                        <th>CGPA</th>
+                        <th>Course</th>
+                        <th>Stream</th>
+                    </tr>
+                </thead>
+                <tbody id="studentsTable">
+                    <tr>
+                        <td colspan="5" style="text-align: center; padding: 40px;">
+                            <i class="fas fa-spinner fa-spin"></i> Loading student data...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="#" class="btn btn-secondary" onclick="showPage('dashboardPage')">
+                    <i class="fas fa-arrow-left icon"></i>Back to Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
