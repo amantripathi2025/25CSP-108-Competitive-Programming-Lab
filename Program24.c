@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 int minimumMoves(int n, char grid[100][100], int sx, int sy, int gx, int gy) {
     int vis[100][100]={0}, dist[100][100];
     int qx[10000], qy[10000], f=0, r=0;
