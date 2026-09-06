@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<stdlib.h>
  int main() {
     int q[100], n, front = -1, rear = -1;
     int choice, x, i;
