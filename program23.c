@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<stdlib.h>
 int main() {
     int q, type, x;
     int queue[100000], front = 0, rear = 0;
