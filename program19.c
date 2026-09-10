@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<stdlib.h>
 int main() {
     int q[10], n = 10;
     int front = -1, rear = -1;
