@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdliib.h>
 int main(){
     int n;
     printf("Enter the size of the array; ");
