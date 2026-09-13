@@ -1,12 +1,9 @@
 #include <stdio.h>
 #include<stdlib.h>
-
 int main() {
     int n;
-
     printf("Enter size of array: ");
     scanf("%d", &n);
-
     int arr[n];
 
     printf("Enter sorted array elements:\n");
