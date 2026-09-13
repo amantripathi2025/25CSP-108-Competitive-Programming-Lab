@@ -125,11 +125,8 @@ void dellast(){
         printf("List is empty\n");
         return;
     }
-    
-    
-    Node *ptr = start;
-    
-    
+        
+    Node *ptr = start;    
     while (ptr->forw != NULL) {
         ptr = ptr->forw;
     }
@@ -164,8 +161,7 @@ void backTrav(){
     if (ptr == NULL) {
         printf("List is empty\n");
         return;
-    }
-    
+    }    
    
     while (ptr->forw != NULL) {
         ptr = ptr->forw;
