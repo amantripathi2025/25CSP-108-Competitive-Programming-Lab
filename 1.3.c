@@ -2,7 +2,6 @@
 #include<stdlib.h>
 
 int stack[100], MAX = 5, top = -1;
-
 void push(){
     int data;
     printf("Enter your data: \n");
