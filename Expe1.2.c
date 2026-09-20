@@ -14,9 +14,7 @@
          printf("Enter 3 for delete\n");
          printf("Enter 4 for exit\n");
     while(b != 0){
-        void clearScreen();
-       
-
+        void clearScreen();   //From here the screen is clear another time 
      printf("Input your choice: ");
     scanf("%d", &c);
 
