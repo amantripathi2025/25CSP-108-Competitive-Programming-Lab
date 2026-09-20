@@ -85,14 +85,11 @@
          ptr = ptr->link;
      }
  }
-
-void delete1(){
+void delete(){
     struct node *ptr;
-
     if(start == NULL){
         printf("Linkedlist is empty\n");
     }
-
     else{
         ptr = start;
         start = start-> link;
